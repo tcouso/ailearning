@@ -1,2 +1,2 @@
-# aiplayground
-Basic implementations of Artificial Intelligence just for fun and learning
+# ailearning
+Self study material and basic projects.
