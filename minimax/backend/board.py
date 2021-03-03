@@ -32,5 +32,32 @@ class Board():
     def game_state(self, new_state):
         self.__game_state = new_state
 
-    def finished_board(self):
-        pass
+    def check_winner(self):
+        if self.win_1 or self.win_2 or self.win_3 or self.win_4:
+            self.game_state = True
+
+    def win_1(self):
+        "Horizontal win."
+        for i in range len(self.grid):
+            if self.grid[i][0] == self.grid[i][1] == self.grid[i][2]:
+                return True
+        return False
+
+    def win_2(self):
+        "Vertical win."
+        for i in range len(self.grid):
+            if self.grid[0][i] == self.grid[1][i] == self.grid[2][i]:
+                return True
+        return False
+
+    def win_3(self):
+        "Northwest to southeast win."
+        if self.grid[0][0] == self.grid[1][1] == self.grid[2][2]:
+            return True
+        return False
+
+    def win_4(self):
+        "Southwest to northeast win."
+        if self.grid[2][0] == self.grid[1][1] == self.grid[0][2]:
+            return True
+        return False
